@@ -46,7 +46,7 @@ console.log(message.crc);
 });
 
 
-var server = app.listen(3000, function () {
+var server = app.listen(3006, function () {
   var port = server.address().port;
   console.log("App now running on port", port);
 });
