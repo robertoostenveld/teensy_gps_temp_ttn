@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 var region = 'eu';
 var appId = 'teensy_gps_temp';
-var accessKey = 'ttn-account-v2.N52kVIXU8VyZCrob0L62mVAL-TeqZwtbF90wkKiQOs0';
+var accessKey = 'ttn-account-v2.I1jULo27eRddHRSf5zh1nNURZltzJ3fk5F08h2SBZRY';
 
 var client = new ttn.Client(region, appId, accessKey);
 
