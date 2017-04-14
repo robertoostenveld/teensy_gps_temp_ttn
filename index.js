@@ -31,18 +31,18 @@ client.on('activation', function(deviceId, data) {
 });
 
 client.on('message', function(deviceId, data) {
-    console.info('[INFO] ', 'Message:', deviceId, JSON.stringify(data, null, 2));
-    console.log('[LOG] ', data.payload_raw);
+  // console.info('[INFO] ', 'Message:', deviceId, JSON.stringify(data, null, 2));
+  // console.log('[LOG] ', data.payload_raw);
+  message = messagedef.read(data.payload_raw);
 
-message = messagedef.read(data.payload_raw);
-console.log(message.id);
-console.log(message.counter);
-console.log(message.value1);
-console.log(message.value2);
-console.log(message.value3);
-console.log(message.value4);
-console.log(message.value5);
-console.log(message.crc);
+  // console.log(message.id);
+  // console.log(message.counter);
+  // console.log(message.value1);
+  // console.log(message.value2);
+  // console.log(message.value3);
+  // console.log(message.value4);
+  // console.log(message.value5);
+  // console.log(message.crc);
 });
 
 
