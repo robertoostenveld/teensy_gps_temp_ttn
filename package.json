@@ -2,7 +2,7 @@
   "name": "teensy_gps_temp_ttn",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "teensy_gps_temp_ttn.js",
   "dependencies": {
     "binstruct": "^0.3.1",
     "body-parser": "^1.17.1",
