@@ -13,9 +13,32 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 var region = 'eu';
-var appId = 'teensy_gps_temp';
+var appID = "teensy_gps_temp"
 var accessKey = 'ttn-account-v2.I1jULo27eRddHRSf5zh1nNURZltzJ3fk5F08h2SBZRY';
 
+ttn.data(appID, accessKey)
+  .then(function (client) {
+    client.on("uplink", function (devID, payload) {
+      console.log("Received uplink from ", devID)
+      //console.log(payload)
+      message = messagedef.read(payload.payload_raw);
+      //console.log(message.id);
+      //console.log(message.counter);
+      //console.log(message.value1);
+      //console.log(message.value2);
+      //console.log(message.value3);
+      //console.log(message.value4);
+      //console.log(message.value5);
+      //console.log(message.crc);
+    })
+  })
+  .catch(function (err) {
+    console.error(err)
+    process.exit(1)
+  })
+
+
+/*
 var client = new ttn.Client(region, appId, accessKey);
 
 client.on('connect', function(connack) {
@@ -44,7 +67,7 @@ client.on('message', function(deviceId, data) {
   // console.log(message.value5);
   // console.log(message.crc);
 });
-
+*/
 
 var server = app.listen(3007, function () {
   var port = server.address().port;
